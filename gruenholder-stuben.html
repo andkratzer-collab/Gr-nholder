@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grünholder Stuben – Hausgemachte Küche in Gablingen</title>
+<meta name="description" content="Grünholder Stuben in Gablingen – ein Familienbetrieb mit hausgemachter, saisonaler Küche. Wöchentlich wechselnde Speisekarte, Steinofenpizza und Festsaal für Feiern bis 250 Gäste.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#14251C;
+    --forest:#22392C;
+    --forest-soft:#2C4636;
+    --cream:#F4EEE0;
+    --cream-dim:#E4DAC4;
+    --brass:#C2A15C;
+    --brass-bright:#D9BE82;
+    --berry:#6B2A46;
+    --ink:#1B231D;
+    --ink-soft:#41473F;
+    --line:rgba(194,161,92,.28);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Mulish",system-ui,-apple-system,sans-serif;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);opacity:.7}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+    padding:22px 0;
+  }
+  header.scrolled{
+    background:rgba(20,37,28,.94);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 0 var(--line);
+    padding:14px 0;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{
+    font-family:var(--serif);
+    font-size:1.35rem;
+    color:var(--cream);
+    letter-spacing:.01em;
+    display:flex;align-items:center;gap:12px;
+  }
+  .brand svg{flex:none}
+  .nav-links{display:flex;align-items:center;gap:38px;list-style:none}
+  .nav-links a{
+    font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cream);opacity:.82;transition:opacity .25s, color .25s;position:relative;padding:4px 0;
+  }
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--brass);transition:width .3s ease}
+  .nav-links a:hover{opacity:1;color:var(--brass-bright)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links .btn-phone{
+    border:1px solid var(--brass);border-radius:2px;padding:9px 18px;color:var(--brass-bright);
+    opacity:1;letter-spacing:.08em;
+  }
+  .nav-links .btn-phone::after{display:none}
+  .nav-links .btn-phone:hover{background:var(--brass);color:var(--forest-deep)}
+
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110}
+  .burger span{display:block;width:26px;height:2px;background:var(--cream);margin:5px 0;transition:.3s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:radial-gradient(120% 90% at 80% 10%, #2C4636 0%, var(--forest) 40%, var(--forest-deep) 100%);
+    color:var(--cream);overflow:hidden;
+  }
+  .hero-botanical{position:absolute;inset:0;pointer-events:none;opacity:.5}
+  .hero-botanical .sprig-a{position:absolute;top:-40px;right:-30px;width:min(46vw,560px);color:var(--brass);opacity:.42}
+  .hero-botanical .sprig-b{position:absolute;bottom:-70px;left:-60px;width:min(38vw,440px);color:var(--forest-soft);opacity:.9;transform:scaleX(-1)}
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:80px}
+  .hero-inner{max-width:720px}
+  .hero h1{
+    font-size:clamp(3rem,9vw,6.4rem);
+    font-weight:400;
+    line-height:.98;
+    margin:22px 0 26px;
+    letter-spacing:-.02em;
+  }
+  .hero h1 em{font-style:italic;color:var(--brass-bright);font-weight:400}
+  .hero .lede{
+    font-size:clamp(1.05rem,2.2vw,1.35rem);
+    color:var(--cream-dim);
+    max-width:560px;
+    font-weight:300;
+    margin-bottom:40px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:16px 28px;border-radius:2px;cursor:pointer;transition:.28s ease;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--brass);color:var(--forest-deep)}
+  .btn-primary:hover{background:var(--brass-bright);transform:translateY(-2px)}
+  .btn-ghost{border-color:rgba(244,238,224,.35);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass-bright)}
+
+  .hero-scroll{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);opacity:.55;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .hero-scroll .dash{width:1px;height:38px;background:linear-gradient(var(--brass),transparent);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* ---------- SECTIONS ---------- */
+  .section{padding:110px 0}
+  .section-head{margin-bottom:56px;max-width:640px}
+  .section-head h2{font-size:clamp(2rem,5vw,3.2rem);margin:18px 0 0;color:var(--forest-deep)}
+
+  /* about */
+  .about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+  .about-text p{font-size:1.1rem;color:var(--ink-soft);margin-bottom:22px;max-width:52ch}
+  .about-text p:first-of-type{font-family:var(--serif);font-size:1.55rem;line-height:1.4;color:var(--forest-deep);font-weight:400}
+  .about-signature{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--berry);margin-top:8px}
+  .about-card{
+    background:var(--forest-deep);color:var(--cream);border-radius:4px;padding:48px 44px;position:relative;overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(20,37,28,.6);
+  }
+  .about-card .sprig{position:absolute;top:-30px;right:-30px;width:210px;color:var(--brass);opacity:.28}
+  .about-card h3{color:var(--brass-bright);font-size:1.5rem;margin-bottom:20px;position:relative}
+  .about-card ul{list-style:none;position:relative}
+  .about-card li{padding:13px 0;border-bottom:1px solid rgba(194,161,92,.18);font-size:1.02rem;color:var(--cream-dim);display:flex;gap:14px;align-items:baseline}
+  .about-card li:last-child{border-bottom:none}
+  .about-card li::before{content:"❧";color:var(--brass);font-size:.9rem;flex:none}
+
+  /* kitchen / favorites */
+  .kitchen{background:var(--forest-deep);color:var(--cream);position:relative;overflow:hidden}
+  .kitchen .section-head h2{color:var(--cream)}
+  .kitchen .divider-sprig{position:absolute;top:60px;right:-40px;width:280px;color:var(--brass);opacity:.14;pointer-events:none}
+  .dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .dish{background:var(--forest);padding:44px 34px;transition:background .35s ease;position:relative}
+  .dish:hover{background:var(--forest-soft)}
+  .dish .num{font-family:var(--serif);font-size:.85rem;color:var(--brass);letter-spacing:.1em}
+  .dish h3{font-size:1.55rem;margin:18px 0 12px;color:var(--cream)}
+  .dish p{color:var(--cream-dim);font-size:.98rem;font-weight:300}
+  .dish .tag{display:inline-block;margin-top:20px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);border:1px solid var(--line);padding:5px 12px;border-radius:20px}
+  .kitchen-note{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--brass-bright);max-width:640px;line-height:1.5}
+
+  /* hours */
+  .hours{background:var(--cream)}
+  .hours-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+  .hours-list{width:100%;border-top:1px solid var(--line)}
+  .hours-list .row{display:flex;justify-content:space-between;align-items:center;padding:18px 4px;border-bottom:1px solid var(--line);font-size:1.05rem;transition:padding .3s}
+  .hours-list .row .day{font-weight:600;color:var(--ink)}
+  .hours-list .row .time{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .hours-list .row.closed .time{color:#A8A090;font-style:italic}
+  .hours-list .row.today{background:var(--forest-deep);color:var(--cream);padding-left:16px;padding-right:16px;border-radius:3px;border-bottom-color:transparent}
+  .hours-list .row.today .day{color:var(--brass-bright)}
+  .hours-list .row.today .time{color:var(--cream)}
+  .hours-list .row.today::after{content:"Heute";font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-bright);margin-left:auto;padding-left:14px}
+  .hours-visual{background:var(--forest-deep);color:var(--cream);border-radius:4px;padding:52px 46px;position:relative;overflow:hidden}
+  .hours-visual .sprig{position:absolute;bottom:-40px;right:-30px;width:240px;color:var(--brass);opacity:.22;transform:scaleX(-1)}
+  .hours-visual h3{color:var(--brass-bright);font-size:1.7rem;margin-bottom:16px;position:relative}
+  .hours-visual p{color:var(--cream-dim);position:relative;font-weight:300;margin-bottom:24px}
+  .hours-visual .phone-big{position:relative;font-family:var(--serif);font-size:2rem;color:var(--cream);display:inline-flex;align-items:center;gap:12px}
+  .hours-visual .phone-big:hover{color:var(--brass-bright)}
+
+  /* celebrations */
+  .feiern{background:linear-gradient(160deg,var(--forest) 0%, var(--forest-deep) 100%);color:var(--cream);position:relative;overflow:hidden}
+  .feiern .sprig-bg{position:absolute;top:-60px;left:-50px;width:min(40vw,420px);color:var(--brass);opacity:.12}
+  .feiern .section-head h2{color:var(--cream)}
+  .feiern-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .feiern-text p{color:var(--cream-dim);font-size:1.08rem;margin-bottom:22px;font-weight:300;max-width:50ch}
+  .feiern-stats{display:flex;gap:40px;margin:36px 0}
+  .stat .big{font-family:var(--serif);font-size:2.8rem;color:var(--brass-bright);line-height:1}
+  .stat .lbl{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-dim);margin-top:8px}
+  .arrangement{background:rgba(244,238,224,.05);border:1px solid var(--line);border-radius:4px;padding:42px 40px}
+  .arrangement .eyebrow{margin-bottom:8px}
+  .arrangement h3{color:var(--cream);font-size:1.7rem;margin-bottom:26px;font-weight:400}
+  .arrangement h3 em{color:var(--brass-bright);font-style:italic}
+  .arrangement ul{list-style:none}
+  .arrangement li{padding:14px 0;border-bottom:1px solid rgba(194,161,92,.16);color:var(--cream-dim);display:flex;gap:14px;align-items:center;font-size:1.02rem}
+  .arrangement li:last-child{border-bottom:none}
+  .arrangement li svg{flex:none;color:var(--brass)}
+
+  /* contact */
+  .kontakt{background:var(--cream)}
+  .kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .kontakt-text .section-head{margin-bottom:34px}
+  .kontakt-text p{color:var(--ink-soft);font-size:1.08rem;margin-bottom:26px;max-width:46ch}
+  .contact-block{display:flex;gap:18px;align-items:flex-start;margin-bottom:26px}
+  .contact-block .ic{width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--brass)}
+  .contact-block .label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:4px}
+  .contact-block .val{font-family:var(--serif);font-size:1.35rem;color:var(--forest-deep)}
+  .contact-block a.val:hover{color:var(--berry)}
+  .map-card{background:var(--forest-deep);border-radius:4px;overflow:hidden;min-height:340px;position:relative;box-shadow:0 30px 60px -30px rgba(20,37,28,.55)}
+  .map-card iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.35) contrast(1.05)}
+
+  /* footer */
+  footer{background:var(--forest-deep);color:var(--cream-dim);padding:70px 0 40px;font-size:.9rem}
+  .footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .footer-brand{max-width:320px}
+  .footer-brand .brand{margin-bottom:16px}
+  .footer-brand p{color:var(--cream-dim);font-weight:300;line-height:1.7}
+  .footer-cols{display:flex;gap:70px;flex-wrap:wrap}
+  .footer-col h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;font-weight:700}
+  .footer-col a,.footer-col p{display:block;color:var(--cream-dim);margin-bottom:9px;font-weight:300;transition:color .25s}
+  .footer-col a:hover{color:var(--brass-bright)}
+  .footer-bottom{padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.8rem;color:rgba(228,218,196,.55)}
+  .footer-bottom a{color:rgba(228,218,196,.7)}
+  .footer-bottom a:hover{color:var(--brass-bright)}
+
+  /* impressum modal */
+  .modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(20,37,28,.6);backdrop-filter:blur(4px)}
+  .modal.open{display:flex}
+  .modal-box{background:var(--cream);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;border-radius:4px;padding:48px 44px;position:relative}
+  .modal-box h3{font-size:1.9rem;color:var(--forest-deep);margin-bottom:8px}
+  .modal-box h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:24px 0 8px;font-weight:700}
+  .modal-box p{color:var(--ink-soft);font-size:.94rem;margin-bottom:8px;line-height:1.6}
+  .modal-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink-soft);line-height:1}
+  .modal-close:hover{color:var(--berry)}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* focus */
+  a:focus-visible,button:focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .about-grid,.hours-grid,.feiern-grid,.kontakt-grid{grid-template-columns:1fr;gap:44px}
+    .dishes{grid-template-columns:1fr}
+    .section{padding:80px 0}
+    .nav-links{
+      position:fixed;top:0;right:0;height:100vh;width:min(78vw,340px);
+      background:var(--forest-deep);flex-direction:column;justify-content:center;align-items:flex-start;
+      gap:26px;padding:0 44px;transform:translateX(100%);transition:transform .4s cubic-bezier(.6,0,.2,1);
+      box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:1rem}
+    .burger{display:block}
+    .footer-top{flex-direction:column}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px}
+    .hero .wrap{padding-top:110px}
+    .feiern-stats{gap:28px}
+    .about-card,.hours-visual,.arrangement{padding:36px 28px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Grünholder Stuben – Startseite">
+      <svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+        <path d="M13 29V9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M13 15C13 15 8 13 6 9C10 8 13 12 13 15Z" fill="#C2A15C"/>
+        <path d="M13 15C13 15 18 13 20 9C16 8 13 12 13 15Z" fill="#C2A15C"/>
+        <circle cx="9" cy="4" r="2" fill="#C2A15C"/><circle cx="13" cy="2.5" r="2" fill="#C2A15C"/>
+        <circle cx="17" cy="4" r="2" fill="#C2A15C"/><circle cx="11" cy="6" r="1.6" fill="#C2A15C"/><circle cx="15" cy="6" r="1.6" fill="#C2A15C"/>
+      </svg>
+      Grünholder Stuben
+    </a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#kueche">Küche</a></li>
+      <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+      <li><a href="#feiern">Feiern &amp; Hochzeiten</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="tel:082309588" class="btn-phone">08230&nbsp;/&nbsp;9588</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-botanical" aria-hidden="true">
+    <svg class="sprig-a" viewBox="0 0 400 400" fill="none">
+      <path d="M200 400 C 200 300 190 220 200 140 C 205 100 215 60 210 20" stroke="currentColor" stroke-width="2" fill="none" opacity=".7"/>
+      <path d="M200 260 C 160 250 130 230 110 195 C 150 185 190 220 200 260Z" fill="currentColor" opacity=".5"/>
+      <path d="M200 210 C 240 200 270 178 292 143 C 250 133 210 170 200 210Z" fill="currentColor" opacity=".5"/>
+      <path d="M205 160 C 170 152 145 132 128 100 C 162 92 198 128 205 160Z" fill="currentColor" opacity=".5"/>
+      <g fill="currentColor"><circle cx="200" cy="30" r="9"/><circle cx="185" cy="22" r="8"/><circle cx="215" cy="22" r="8"/><circle cx="193" cy="42" r="7"/><circle cx="208" cy="42" r="7"/><circle cx="200" cy="52" r="6"/><circle cx="175" cy="34" r="6"/><circle cx="225" cy="34" r="6"/></g>
+    </svg>
+    <svg class="sprig-b" viewBox="0 0 400 400" fill="none">
+      <path d="M60 400 C 90 320 140 260 200 210 C 250 168 300 140 330 100" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M180 240 C 150 210 140 175 148 140 C 185 158 195 205 180 240Z" fill="currentColor"/>
+      <path d="M250 180 C 270 145 305 128 340 128 C 335 168 292 190 250 180Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner reveal">
+      <span class="eyebrow">Familienbetrieb · Gablingen seit Herzen geführt</span>
+      <h1>Hausgemacht,<br>saisonal,<br><em>mit Seele.</em></h1>
+      <p class="lede">Geniessen Sie unsere hausgemachten Speisen in gemütlicher, familiärer Atmosphäre. Unsere Speisekarte stellen wir jede Woche neu zusammen – inspiriert von dem, was die Saison uns schenkt.</p>
+      <div class="cta-row">
+        <a href="tel:082309588" class="btn btn-primary">Tisch reservieren
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#kueche" class="btn btn-ghost">Unsere Küche entdecken</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span>Willkommen</span><span class="dash"></span></div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <span class="eyebrow">Wer wir sind</span>
+      <p>Die Grünholder Stuben ist ein Familienbetrieb, der mit viel Herz und Seele geführt wird.</p>
+      <p>Bei uns kommt auf den Teller, was frisch, ehrlich und handgemacht ist. Keine Massenware, keine Kompromisse – sondern Küche, hinter der eine Familie steht. Vom knusprigen Schnitzel bis zur Pizza aus dem Steinofen: Sie schmecken den Unterschied.</p>
+      <p>Nehmen Sie Platz, lassen Sie den Tag draußen und genießen Sie einen Abend, an den man sich gerne erinnert.</p>
+      <p class="about-signature">Ihre Familie Greguric</p>
+    </div>
+    <div class="about-card reveal">
+      <svg class="sprig" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <path d="M100 200 C 100 140 95 100 100 60" stroke="currentColor" stroke-width="2"/>
+        <path d="M100 130 C 70 122 55 100 50 75 C 82 80 98 105 100 130Z" fill="currentColor"/>
+        <path d="M100 100 C 130 92 148 72 152 48 C 120 52 104 78 100 100Z" fill="currentColor"/>
+        <g fill="currentColor"><circle cx="100" cy="24" r="8"/><circle cx="86" cy="18" r="7"/><circle cx="114" cy="18" r="7"/><circle cx="94" cy="36" r="6"/><circle cx="108" cy="36" r="6"/></g>
+      </svg>
+      <h3>Was uns ausmacht</h3>
+      <ul>
+        <li>Wöchentlich wechselnde, saisonale Speisekarte</li>
+        <li>Hausgemachte Speisen aus eigener Küche</li>
+        <li>Steinofenpizza, frisch und knusprig</li>
+        <li>Gemütliche, familiäre Atmosphäre</li>
+        <li>Festsaal für Ihre Feiern bis 250 Gäste</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KÜCHE ============ -->
+<section class="section kitchen" id="kueche">
+  <svg class="divider-sprig" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+    <path d="M150 300 C150 200 145 140 150 80" stroke="currentColor" stroke-width="2"/>
+    <path d="M150 200 C110 190 90 160 85 125 C130 133 148 168 150 200Z" fill="currentColor"/>
+    <path d="M150 150 C190 140 215 112 220 78 C176 84 154 118 150 150Z" fill="currentColor"/>
+    <g fill="currentColor"><circle cx="150" cy="40" r="10"/><circle cx="132" cy="32" r="8"/><circle cx="168" cy="32" r="8"/><circle cx="142" cy="54" r="7"/><circle cx="158" cy="54" r="7"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Aus der Küche</span>
+      <h2>Unsere Klassiker – immer für Sie da</h2>
+    </div>
+    <div class="dishes reveal">
+      <article class="dish">
+        <span class="num">Nr. 01</span>
+        <h3>Schweineschnitzel „Wiener Art"</h3>
+        <p>Goldbraun paniert, serviert mit hausgemachten Röstkartoffeln. Der Klassiker, den man einfach nicht besser machen kann.</p>
+        <span class="tag">Hausklassiker</span>
+      </article>
+      <article class="dish">
+        <span class="num">Nr. 02</span>
+        <h3>Steinofenpizza</h3>
+        <p>Knusprig aus dem Steinofen, mit frischen Zutaten belegt. Der Duft allein ist schon die Reise wert.</p>
+        <span class="tag">Aus dem Ofen</span>
+      </article>
+      <article class="dish">
+        <span class="num">Nr. 03</span>
+        <h3>Salatplatte mit gegrilltem Gemüse</h3>
+        <p>Bunte Salatplatte mit gegrilltem Gemüse und Schafskäse. Leicht, frisch und voller Aroma.</p>
+        <span class="tag">Vegetarisch</span>
+      </article>
+    </div>
+    <p class="kitchen-note reveal">Und dazu jede Woche wechselnde Gerichte, inspiriert von der Saison – am besten rufen Sie kurz an und lassen sich die aktuelle Karte verraten.</p>
+  </div>
+</section>
+
+<!-- ============ ÖFFNUNGSZEITEN ============ -->
+<section class="section hours" id="oeffnungszeiten">
+  <div class="wrap hours-grid">
+    <div class="hours-visual reveal">
+      <svg class="sprig" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <path d="M100 200 C100 140 95 100 100 60" stroke="currentColor" stroke-width="2"/>
+        <path d="M100 130 C70 122 55 100 50 75 C82 80 98 105 100 130Z" fill="currentColor"/>
+        <path d="M100 100 C130 92 148 72 152 48 C120 52 104 78 100 100Z" fill="currentColor"/>
+        <g fill="currentColor"><circle cx="100" cy="24" r="8"/><circle cx="86" cy="18" r="7"/><circle cx="114" cy="18" r="7"/></g>
+      </svg>
+      <h3>Wir freuen uns auf Sie</h3>
+      <p>Reservierungen und Anfragen nehmen wir am liebsten persönlich am Telefon entgegen – so bekommen Sie sofort eine verbindliche Antwort.</p>
+      <a href="tel:082309588" class="phone-big">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        08230 / 9588
+      </a>
+    </div>
+    <div class="reveal">
+      <div class="section-head" style="margin-bottom:32px">
+        <span class="eyebrow">Öffnungszeiten</span>
+        <h2>Wann Sie uns finden</h2>
+      </div>
+      <div class="hours-list" id="hoursList">
+        <div class="row closed" data-day="1"><span class="day">Montag</span><span class="time">geschlossen</span></div>
+        <div class="row closed" data-day="2"><span class="day">Dienstag</span><span class="time">geschlossen</span></div>
+        <div class="row" data-day="3"><span class="day">Mittwoch</span><span class="time">17:00 – 23:00</span></div>
+        <div class="row" data-day="4"><span class="day">Donnerstag</span><span class="time">17:00 – 23:00</span></div>
+        <div class="row" data-day="5"><span class="day">Freitag</span><span class="time">17:00 – 23:00</span></div>
+        <div class="row" data-day="6"><span class="day">Samstag</span><span class="time">17:00 – 23:00</span></div>
+        <div class="row" data-day="0"><span class="day">Sonntag</span><span class="time">11:00 – 22:00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEIERN & HOCHZEITEN ============ -->
+<section class="section feiern" id="feiern">
+  <svg class="sprig-bg" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <path d="M200 400 C200 300 190 220 200 140 C205 100 215 60 210 20" stroke="currentColor" stroke-width="2"/>
+    <path d="M200 260 C160 250 130 230 110 195 C150 185 190 220 200 260Z" fill="currentColor"/>
+    <path d="M200 210 C240 200 270 178 292 143 C250 133 210 170 200 210Z" fill="currentColor"/>
+    <g fill="currentColor"><circle cx="200" cy="30" r="9"/><circle cx="185" cy="22" r="8"/><circle cx="215" cy="22" r="8"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Feiern &amp; Hochzeiten</span>
+      <h2>Ihr Fest, an das man sich erinnert</h2>
+    </div>
+    <div class="feiern-grid">
+      <div class="feiern-text reveal">
+        <p>Ob Hochzeit, Geburtstag, Taufe oder Firmenfeier – im kleinen oder großen Rahmen: Sagen Sie uns Ihre Vorstellungen, und wir machen Ihnen ein passendes Angebot.</p>
+        <p>Unseren Saal dekorieren wir aufwendig in Ihrer Wunschfarbe. Für kleinere Feiern steht Ihnen auch unser Restaurant zur Verfügung.</p>
+        <div class="feiern-stats">
+          <div class="stat"><div class="big">250</div><div class="lbl">Gäste im Saal</div></div>
+          <div class="stat"><div class="big">80</div><div class="lbl">Plätze im Restaurant</div></div>
+          <div class="stat"><div class="big">20+</div><div class="lbl">Jahre Erfahrung</div></div>
+        </div>
+        <a href="tel:082309588" class="btn btn-primary">Unverbindlich anfragen
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="arrangement reveal">
+        <span class="eyebrow">Ein Beispiel</span>
+        <h3>Hochzeits&shy;arrangement <em>All&nbsp;Inclusive</em></h3>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sektempfang</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Drei-Gänge-Mittagessen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Kaffee &amp; Kuchen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alle Getränke</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abendessen als warm-/kaltes Buffet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="section kontakt" id="kontakt">
+  <div class="wrap kontakt-grid">
+    <div class="kontakt-text reveal">
+      <div class="section-head">
+        <span class="eyebrow">Kontakt</span>
+        <h2>So erreichen Sie uns</h2>
+      </div>
+      <p>Wir sind ein kleines, traditionelles Familienunternehmen und konzentrieren uns ganz auf unser Handwerk. Der einfachste und schnellste Weg zu uns ist deshalb ein Anruf.</p>
+      <div class="contact-block">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div><div class="label">Telefon</div><a href="tel:082309588" class="val">08230 / 9588</a></div>
+      </div>
+      <div class="contact-block">
+        <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <div><div class="label">Adresse</div><span class="val">Holzhauser Weg 5<br>86456 Gablingen</span></div>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Standort Grünholder Stuben, Holzhauser Weg 5, Gablingen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Holzhauser+Weg+5,+86456+Gablingen&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand" style="font-size:1.4rem">
+          <svg width="24" height="28" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+            <path d="M13 29V9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M13 15C13 15 8 13 6 9C10 8 13 12 13 15Z" fill="#C2A15C"/><path d="M13 15C13 15 18 13 20 9C16 8 13 12 13 15Z" fill="#C2A15C"/>
+            <circle cx="9" cy="4" r="2" fill="#C2A15C"/><circle cx="13" cy="2.5" r="2" fill="#C2A15C"/><circle cx="17" cy="4" r="2" fill="#C2A15C"/>
+          </svg>
+          Grünholder Stuben
+        </span>
+        <p>Hausgemachte, saisonale Küche in gemütlicher Atmosphäre – ein Familienbetrieb mit Herz in Gablingen.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Entdecken</h4>
+          <a href="#kueche">Unsere Küche</a>
+          <a href="#oeffnungszeiten">Öffnungszeiten</a>
+          <a href="#feiern">Feiern &amp; Hochzeiten</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <a href="tel:082309588">08230 / 9588</a>
+          <p>Holzhauser Weg 5<br>86456 Gablingen</p>
+        </div>
+        <div class="footer-col">
+          <h4>Geöffnet</h4>
+          <p>Mi – Sa · 17:00 – 23:00</p>
+          <p>Sonntag · 11:00 – 22:00</p>
+          <p>Mo &amp; Di · geschlossen</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Grünholder Stuben · Familie Greguric</span>
+      <span><a href="#" id="impressumLink">Impressum &amp; Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ IMPRESSUM MODAL ============ -->
+<div class="modal" id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="imprTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Schließen">×</button>
+    <h3 id="imprTitle">Impressum</h3>
+    <p>Angaben gemäß § 5 TMG</p>
+    <h4>Pächterin</h4>
+    <p>Inge Greguric<br>Holzhauser Weg 5<br>86456 Gablingen</p>
+    <p>Vertreten durch: Ivan Greguric</p>
+    <h4>Kontakt</h4>
+    <p>Telefon: 08230 / 9588<br>E-Mail: service@gruenholder-stuben.de</p>
+    <h4>Umsatzsteuer-ID</h4>
+    <p>102/222/11234</p>
+    <h4>Haftung für Inhalte</h4>
+    <p>Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+    <h4>Haftung für Links</h4>
+    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+    <h4>Urheberrecht</h4>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+    <h4>Datenschutz</h4>
+    <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Personenbezogene Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+  </div>
+</div>
+
+<script>
+  // Nav scroll state
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open'); burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // Highlight today in opening hours
+  const today = new Date().getDay(); // 0=So ... 6=Sa
+  const row = document.querySelector('#hoursList .row[data-day="' + today + '"]');
+  if (row && !row.classList.contains('closed')) row.classList.add('today');
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Impressum modal
+  const modal = document.getElementById('impressumModal');
+  const openModal = e => { e && e.preventDefault(); modal.classList.add('open'); };
+  document.getElementById('impressumLink').addEventListener('click', openModal);
+  document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
